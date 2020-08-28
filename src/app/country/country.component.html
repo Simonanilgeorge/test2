@@ -1,0 +1,26 @@
+
+<div>
+
+
+    <table>
+  
+        <tr>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Alpha2Code</th>
+            <th>Alpha3Code</th>
+        </tr>
+        <tr *ngFor="let country of countries">
+            <td>{{country.name}}</td>
+            <td>{{country.code}}</td>
+            <td>{{country.alpha2Code}}</td>
+            <td>{{country.alpha3Code}}</td>
+        </tr>
+    </table>
+
+</div>
+
+
+    <!-- <ul *ngFor="let country of countries">
+        <li>{{country.name}}</li>
+    </ul> -->

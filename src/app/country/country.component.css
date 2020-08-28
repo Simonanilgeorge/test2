@@ -1,0 +1,32 @@
+th{
+   
+    padding:20px 16px;
+    margin:10px;
+    text-align: center;
+    font-size: 20px;
+    /* border:1px solid black; */
+
+    border-radius: 5%;
+}
+
+td{
+  
+    padding:20px 16px;
+    margin:10px;
+    text-align: center;
+    border:1px solid black;
+
+
+}
+
+
+table {
+     text-align:center;
+   width: 500px;
+    margin: 0 auto;
+    border-collapse: collapse;
+
+  
+
+  }
+  
