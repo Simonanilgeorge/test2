@@ -9,7 +9,10 @@ import {country} from '../country';
 })
 export class CountryComponent implements OnInit {
 
-public countries:any=[]
+public countries:any=[];
+//variable to store the new countries
+// public newcountry:country[]=[];
+public newcountry:any=[];
 
   constructor(private countryservice:CountryService) { }
 
@@ -23,11 +26,33 @@ public countries:any=[]
     //fetch the data from getcountry function in servive file
     this.countryservice.getcountry()
     .subscribe(data=>this.countries=data);
-  
-
-
 
   }
 
+  //create a function to add countries
+  add(NAME,CODE,ALPHA2CODE,ALPHA3CODE){
+    //add all variables to newcountry and call the function to add the values
+ console.log(`the returned values are ${NAME}`)
+ console.log(`the returned values are ${CODE}`)
+ console.log(`the returned values are ${ALPHA2CODE}`)
+ console.log(`the returned values are ${ALPHA3CODE}`)
+ this.newcountry.code=CODE;
+ this.newcountry.name=NAME;
+this.newcountry.alpha2Code=ALPHA2CODE;
+this.newcountry.alpha3Code=ALPHA3CODE; 
 
+
+//call a function to post the data
+this.countryservice
+  .addcountry(this.newcountry)
+  .subscribe(count => this.countries.push(this.newcountry));
+
+}
+
+
+delete(CODE){
+this.countryservice
+  .deletecountry(CODE)
+  .subscribe();
+}
 }

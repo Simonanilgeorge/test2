@@ -1,6 +1,20 @@
 
 <div>
 
+<div class="forms">
+    <p>code</p><input #code type="text">
+    <p>Name</p><input #name type="text">
+
+    <p>alpha2code</p><input #alpha2code type="text">
+    <p>alpha3code</p><input #alpha3code type="text">
+    <button (click)="add(name.value,code.value,alpha2code.value,alpha3code.value)">SUBMIT</button>
+
+    <h3>DELETE</h3>
+    <p>enter the country code</p><input #Code type="text">
+    <button (click)="delete(Code.value)">DELETE</button>
+
+</div>
+
 
     <table>
   
