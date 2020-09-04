@@ -22,7 +22,7 @@ constructor(private countryservice:CountryService) {
     name:null,
     code:null,
     alpha2Code:null,
-    alpha3Code:null
+    alpha3Code:null,
 };
 }
 
@@ -63,6 +63,8 @@ this.countryservice.addcountry(this.country)
 
 delete(code:number): void {
   // this.countries = this.countries.filter(h => h.code !==this.countries.code);
+  
+  console.log(`the country to be deleted is ${code}`);
   this.countryservice.deletecountry(code).subscribe();
 }
 

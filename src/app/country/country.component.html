@@ -2,7 +2,7 @@
 <div>
 
 <div class="forms">
-    <p>code</p><input #code type="text">
+    <p>code</p><input #code type="number">
     <p>Name</p><input #name type="text">
 
     <p>alpha2code</p><input #alpha2code type="text">
@@ -13,9 +13,9 @@
 <div>
     <h1>delete</h1>
     <label>enter country code:
-        <input #code type="text">
+        <input #id type="number">
     </label>
-    <button (click)="delete(code.value)">delete</button>
+    <button (click)="delete(id.value)">delete</button>
 </div>
 
     <table>

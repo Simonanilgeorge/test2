@@ -59,9 +59,10 @@ addcountry(newcountry:country): Observable<country> {
 }
 
 /** DELETE: delete the hero from the server */
-deletecountry(country:country | number): Observable<country> {
-  const id = typeof country === 'number' ? country : country.code;
-  const url = `${this.url}/${id}`;
+deletecountry(code:number): Observable<country> {
+console.log(`the code to be deleted is ${code}`);
+  let url = `${this.url}/${code}`;
+  console.log(`the url is ${url}`);
 
   return this.http.delete<country>(url, this.httpOptions)
   .pipe(
