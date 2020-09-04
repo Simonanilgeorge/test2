@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {country} from './country';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { Observable,of } from 'rxjs';
+import { HttpClient,HttpHeaders} from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
 
 
 //import observables,interface,http client
@@ -11,40 +12,60 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CountryService {
-//create an instance for the http client
+  
+
 
   constructor(private http:HttpClient) { }
+    /**
+ * Handle Http operation that failed.
+ * Let the app continue.
+ * @param operation - name of the operation that failed
+ * @param result - optional value to return as the observable result
+ */
+private handleError<T>(operation = 'operation', result?: T) {
+  return (error: any): Observable<T> => {
 
-  //create a function to fetch the data
-  //create a variable url to get use the url
+    // TODO: send the error to remote logging infrastructure
+    console.error(error); // log to console instead
 
+    // TODO: better job of transforming error for user consumption
+ 
+
+    // Let the app keep running by returning an empty result.
+    return of(result as T);
+  };
+}
+
+httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
   private url:string="https://trn.api.alqasim.net/country";
+
+  // private url:string="/assets/data/countries.json";
 
   getcountry():Observable<any>{
     return this.http.get<any>(this.url);
   }
-//function to add new values
-// addcountry(COUNTRY:country){
 
 
-//   console.log(`function to add data in service file  is called with values${Object.entries(COUNTRY)} `);
-//  this.http.post<country>(this.url,COUNTRY)
-//   //perform a post request
-// }
+/** POST: add a new hero to the server */
+addcountry(newcountry:country): Observable<country> {
+  return this.http.post<country>(this.url,newcountry, this.httpOptions)
+  .pipe(
+ catchError(this.handleError<country>('error'))
+  );;
 
-
-addcountry(COUNTRY:any): Observable<any>
- {
-   
-  return this.http.post<any>(this.url,COUNTRY);
 
 }
 
+/** DELETE: delete the hero from the server */
+deletecountry(country:country | number): Observable<country> {
+  const id = typeof country === 'number' ? country : country.code;
+  const url = `${this.url}/${id}`;
 
-deletecountry(CODE:any): Observable<{}> {
-  console.log(`the code to be deleted is ${CODE}`);
-  const URL = `${this.url}/${CODE}`; 
-  console.log(`the new url is ${URL}`)
-  return this.http.delete(URL);
+  return this.http.delete<country>(url, this.httpOptions)
+  .pipe(
+    catchError(this.handleError<country>('deleteHero'))
+  );
 }
 }
