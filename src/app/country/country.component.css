@@ -1,43 +1,47 @@
-th{
-   
-    padding:20px 16px;
-    margin:10px;
-    text-align: center;
-    font-size: 20px;
-    /* border:1px solid black; */
+/* 
 
-    border-radius: 5%;
+
+
+
+
+
+
+table{
+   
+    text-align: center;
+
+    width:800px;
+border-collapse: collapse;
+margin: auto;
+border-top-left-radius:20px ;
+
+}
+tr{
+    border:1px solid black;
+   
+}
+th{
+  font-size:20px;
+    width:150px;
+    height:100px;
+    color:black;
+    
 }
 
+td{
+  
+    width:150px;
+    height:100px;
+}
 .forms
 {
     padding:30px 36px;
     margin:10px;
-
-
-}
-td{
-  
-    padding:20px 16px;
-    margin:10px;
-    text-align: center;
-    border:1px solid black;
+    border: 1px solid black;
 
 
 }
 
-
-table {
-     text-align:center;
-   width: 500px;
-    margin: 0 auto;
-    border-collapse: collapse;
-
-
-
-  
-
-  }
   
   input{
       height:30px;
@@ -57,25 +61,38 @@ table {
     outline: none;
   }
 .addbtn{
-    background-color: rgba(4, 108, 8, 0.619);
-    transition:0.2s ease-in-out;
+    background-color:#5cb85c;
+ 
 
 }
 
 .dltbtn{
-    background-color: rgba(216, 9, 9, 0.986);
+    background-color:none;
+    height:30px;
+    width:30px;
+    color:black;
+    border-radius: 50%;
 
 }
+.updtbtn{
+    background-color:#337ab7
 
+}
 .addbtn:hover{
-    background-color: rgb(0, 108, 22);
+    background-color: #398439;
 
 
 
 }
 
 .dltbtn:hover{
-    background-color: rgb(164, 1, 1);
+    background-color:#c9302c;
+    color:white;
+
+}
+
+.updtbtn:hover{
+    background-color:#204d74
 
 }
 
@@ -86,4 +103,4 @@ p{
     
     margin:10px 0px;
 
-}
+} */

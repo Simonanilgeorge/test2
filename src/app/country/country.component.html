@@ -1,37 +1,36 @@
 
 <div>
 
-<div class="forms">
+<!-- <div class="forms">
     <h1>ADD</h1>
-    <p>Code</p><input #code type="number">
-    <p>Name</p><input #name type="text">
+    <p>Code</p><input [(ngModel)]="country.code" type="number">
+    <p>Name</p><input [(ngModel)]="country.name" type="text">
+    <p>Alpha2code (max: 2 characters)</p><input [(ngModel)]="country.alpha2Code" maxlength="2" type="text">
+    <p>Alpha3code (max: 3 characters)</p><input [(ngModel)]="country.alpha3Code" maxlength="3" type="text">
+    <button class="addbtn" (click)="add()">Add</button>
 
-    <p>Alpha2code</p><input #alpha2code type="text">
-    <p>Alpha3code</p><input #alpha3code type="text">
-    <button class="addbtn" (click)="add(name.value,code.value,alpha2code.value,alpha3code.value)">Add</button>
 
-
-</div>
-<div class="forms">
+</div> -->
+<!-- <div class="forms">
     <h1>DELETE</h1>
     <p>Enter Country code</p>
   
         <input #id type="number">
  
     <button class="dltbtn" (click)="delete(id.value)">Delete</button>
-</div>
-<div class="forms">
+</div> -->
+<!-- <div class="forms">
     <h1>UPDATE</h1>
-    <p>Code</p><input #ucode type="number">
-    <p>Name</p><input #uname utype="text">
+    <p>Code</p><input [(ngModel)]="country.code" type="number">
+    <p>Name</p><input [(ngModel)]="country.name" type="text">
 
-    <p>Alpha2code</p><input #ualpha2code type="text">
-    <p>Alpha3code</p><input #ualpha3code type="text">
-    <button class="addbtn" (click)="update(uname.value,ucode.value,ualpha2code.value,ualpha3code.value)">Update</button>
+    <p>Alpha2code(max: 2 characters)</p><input [(ngModel)]="country.alpha2Code" maxlength="2" type="text">
+    <p>Alpha3code(max: 3 characters)</p><input [(ngModel)]="country.alpha3Code" maxlength="3" type="text">
+    <button class="updtbtn" (click)="update()">Update</button>
 
 
-</div>
-
+</div> -->
+<h1 style="letter-spacing: 2px;text-align: center;">COUNTRY MASTER</h1>
     <table>
   
         <tr>
@@ -39,6 +38,7 @@
             <th>Code</th>
             <th>Alpha2Code</th>
             <th>Alpha3Code</th>
+            <th></th>
         </tr>
 
         <tr *ngFor="let country of countries">
@@ -46,12 +46,11 @@
             <td>{{country.code}}</td>
             <td>{{country.alpha2Code}}</td>
             <td>{{country.alpha3Code}}</td>
+           
+            <td><button class="dltbtn" (click)="delete(country.code)">x</button></td>
         </tr>
     </table>
 
 </div>
 
 
-    <!-- <ul *ngFor="let country of countries">
-        <li>{{country.name}}</li>
-    </ul> -->

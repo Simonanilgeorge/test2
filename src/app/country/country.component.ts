@@ -44,31 +44,7 @@ this.getcountry();
     .subscribe(data=>this.countries=data);
   }
 
-  //create a function to add countries
-  add(name:string,code:number,alpha2Code:string,alpha3Code:string){
-    //add all variables to newcountry and call the function to add the values
-    
 
-    this.country.name=name;
-    this.country.code=code;
-    this.country.alpha2Code=alpha2Code;
-    this.country.alpha3Code=alpha3Code;
-
-console.log(`country type is ${typeof(this.country)}`);
-console.log( Object.entries(this.country));
-
-
-//call a function to post the data
-this.countryservice.addcountry(this.country)
-.subscribe(country => {
-  this.countries.push(country);
-});
-
-this.reset();
-
-
-
-}
 
 
 delete(code:number): void {
@@ -88,43 +64,42 @@ delete(code:number): void {
 }
 
 
-//update
-update(name:string,code:number,alpha2Code:string,alpha3Code:string){
-  //add all variables to newcountry and call the function to add the values
+// //update
+// update(){
+//   //add all variables to newcountry and call the function to add the values
   
 
-  this.country.name=name;
-  this.country.code=code;
-  this.country.alpha2Code=alpha2Code;
-  this.country.alpha3Code=alpha3Code;
+//   // this.country.name=name;
+//   // this.country.code=code;
+//   // this.country.alpha2Code=alpha2Code;
+//   // this.country.alpha3Code=alpha3Code;
 
-console.log(`country type is ${typeof(this.country)}`);
-console.log( Object.entries(this.country));
-console.log(`country type is ${typeof(this.country)}`);
-
-
-//call a function to post the data
-this.countryservice.updatecountry(this.country,this.country.code)
-.subscribe(country => {
-this.countries.push(country);
-});
-
-this.reset();
+// console.log(`country type is ${typeof(this.country)}`);
+// console.log( Object.entries(this.country));
+// console.log(`country type is ${typeof(this.country)}`);
 
 
+// //call a function to post the data
+// this.countryservice.updatecountry(this.country,this.country.code)
+// .subscribe(country => {
+// this.countries.push(country);
+// });
 
-}
+// this.reset();
 
 
-reset(){
-  this.country={
-    name:null,
-    code:null,
-    alpha2Code:null,
-    alpha3Code:null,
-};
 
-}
+// }
 
+
+// reset(){
+//   this.country={
+//     name:null,
+//     code:null,
+//     alpha2Code:null,
+//     alpha3Code:null,
+// };
+
+// }
 
 }

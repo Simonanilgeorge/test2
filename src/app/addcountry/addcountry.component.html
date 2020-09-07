@@ -1,0 +1,10 @@
+<div class="forms">
+    <h1>ADD</h1>
+    <!-- <p>Code</p><input [(ngModel)]="country.code" type="number"> -->
+    <p>Name</p><input [(ngModel)]="country.name" type="text">
+    <p>Alpha2code (max: 2 characters)</p><input [(ngModel)]="country.alpha2Code" maxlength="2" type="text">
+    <p>Alpha3code (max: 3 characters)</p><input [(ngModel)]="country.alpha3Code" maxlength="3" type="text">
+    <button class="addbtn" (click)="add()">Add</button>
+
+
+</div>
