@@ -2,20 +2,34 @@
 <div>
 
 <div class="forms">
-    <p>code</p><input #code type="number">
+    <h1>ADD</h1>
+    <p>Code</p><input #code type="number">
     <p>Name</p><input #name type="text">
 
-    <p>alpha2code</p><input #alpha2code type="text">
-    <p>alpha3code</p><input #alpha3code type="text">
-    <button (click)="add(name.value,code.value,alpha2code.value,alpha3code.value)">SUBMIT</button>
+    <p>Alpha2code</p><input #alpha2code type="text">
+    <p>Alpha3code</p><input #alpha3code type="text">
+    <button class="addbtn" (click)="add(name.value,code.value,alpha2code.value,alpha3code.value)">Add</button>
+
 
 </div>
-<div>
-    <h1>delete</h1>
-    <label>enter country code:
+<div class="forms">
+    <h1>DELETE</h1>
+    <p>Enter Country code</p>
+  
         <input #id type="number">
-    </label>
-    <button (click)="delete(id.value)">delete</button>
+ 
+    <button class="dltbtn" (click)="delete(id.value)">Delete</button>
+</div>
+<div class="forms">
+    <h1>UPDATE</h1>
+    <p>Code</p><input #ucode type="number">
+    <p>Name</p><input #uname utype="text">
+
+    <p>Alpha2code</p><input #ualpha2code type="text">
+    <p>Alpha3code</p><input #ualpha3code type="text">
+    <button class="addbtn" (click)="update(uname.value,ucode.value,ualpha2code.value,ualpha3code.value)">Update</button>
+
+
 </div>
 
     <table>
@@ -26,6 +40,7 @@
             <th>Alpha2Code</th>
             <th>Alpha3Code</th>
         </tr>
+
         <tr *ngFor="let country of countries">
             <td>{{country.name}}</td>
             <td>{{country.code}}</td>

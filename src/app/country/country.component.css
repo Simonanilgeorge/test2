@@ -11,8 +11,9 @@ th{
 
 .forms
 {
-    padding:20px 16px;
+    padding:30px 36px;
     margin:10px;
+
 
 }
 td{
@@ -32,7 +33,57 @@ table {
     margin: 0 auto;
     border-collapse: collapse;
 
+
+
   
 
   }
   
+  input{
+      height:30px;
+      width:300px;
+      margin-bottom:20px;
+  }
+  
+
+  button{
+    height:30px;
+    width:70px;
+
+    border:none;
+    font-weight:bold;
+    color:white;
+    border-top-right-radius:10px;
+    outline: none;
+  }
+.addbtn{
+    background-color: rgba(4, 108, 8, 0.619);
+    transition:0.2s ease-in-out;
+
+}
+
+.dltbtn{
+    background-color: rgba(216, 9, 9, 0.986);
+
+}
+
+.addbtn:hover{
+    background-color: rgb(0, 108, 22);
+
+
+
+}
+
+.dltbtn:hover{
+    background-color: rgb(164, 1, 1);
+
+}
+
+h1{
+    margin:10px 0px;
+}
+p{
+    
+    margin:10px 0px;
+
+}
