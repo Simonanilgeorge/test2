@@ -3,6 +3,7 @@ import {country} from './country';
 import { Observable,of } from 'rxjs';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { ThrowStmt } from '@angular/compiler';
 
 
 //import observables,interface,http client
@@ -48,6 +49,11 @@ httpOptions = {
     return this.http.get<any>(this.url);
   }
 
+
+  getsinglecountry(code:number):Observable<country>{
+let url=`${this.url}/${code}`;
+return this.http.get<country>(url);
+  }
 
 /** POST: add a new hero to the server */
 addcountry(newcountry:country): Observable<country> {

@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: CountryComponent },
 { path: 'addcountry', component: AddcountryComponent},
-{path:'updatecountry',component:UpdatecountryComponent}
+{path:'updatecountry/:code',component:UpdatecountryComponent}
 
 
 ];

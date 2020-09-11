@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import {CountryService } from '../country.service';
 import { BrowserModule } from '@angular/platform-browser';
 import {country} from '../country';
@@ -11,6 +12,7 @@ import {country} from '../country';
 })
 export class UpdatecountryComponent implements OnInit {
   public countries:country[]=[];
+
   public country:country={
     name:null,
     code:null,
@@ -19,7 +21,7 @@ export class UpdatecountryComponent implements OnInit {
   
   };
   
-  constructor(private countryservice:CountryService) { 
+  constructor(private countryservice:CountryService,  private location: Location, private route: ActivatedRoute) { 
     //   this.country={
     //     name:null,
     //     code:null,
@@ -30,15 +32,24 @@ export class UpdatecountryComponent implements OnInit {
 
     ngOnInit():void 
     {
-    this.getcountry();
+      const id = +this.route.snapshot.paramMap.get('code');
+    console.log(id);
+
+    this.getsinglecountry(id);
     }
     
+
+    getsinglecountry(id){
+      this.countryservice.getsinglecountry(id)
+     .subscribe(data=>this.country=data);
+    }
       //function to get countries
-      getcountry()
-      {
-        this.countryservice.getcountry()
-        .subscribe(data=>this.countries=data);
-      }
+      // getcountry()
+      // {
+      //   console.log(`router is ${this.route}`);
+      //   this.countryservice.getcountry()
+      //   .subscribe(data=>this.countries=data);
+      // }
 
 
 

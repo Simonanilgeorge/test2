@@ -42,7 +42,7 @@
         </tr>
 
         <tr *ngFor="let country of countries">
-            <td>{{country.name}}</td>
+            <td style="cursor: pointer;" routerLink="/updatecountry/{{country.code}}">{{country.name}}</td>
             <td>{{country.code}}</td>
             <td>{{country.alpha2Code}}</td>
             <td>{{country.alpha3Code}}</td>
@@ -50,6 +50,7 @@
             <td><button class="dltbtn" (click)="delete(country.code)">x</button></td>
         </tr>
     </table>
+
 
 </div>
 

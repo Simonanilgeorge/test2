@@ -3,7 +3,7 @@
 background:black;
     /* padding:30px 30px; */
 color:white;
-    justify-content:center;
+    justify-content:flex-start;
     align-items:flex-end;
 height:100px;
     margin-bottom: 50px;
